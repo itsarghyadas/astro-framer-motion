@@ -42,10 +42,10 @@ export default function NumberTicker({
   );
 
   return (
-    <div className="flex items-center justify-center gap-x-10">
-      <p>The framer motion is working</p>
+    <div className="flex flex-col items-center justify-center gap-y-10">
+      <p>The framer motion is working from magicui</p>
       <span
-        className={`inline-block tabular-nums text-black dark:text-white ${className}`}
+        className={`inline-block tabular-nums text-7xl font-bold text-black dark:text-white ${className}`}
         ref={ref}
       />
     </div>
