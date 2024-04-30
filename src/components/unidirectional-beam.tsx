@@ -9,7 +9,7 @@ export default function AnimatedBeamDemo() {
   return (
     <div
       ref={containerRef}
-      className="relative flex h-full w-full justify-between max-w-[300px] mx-auto p-4 overflow-hidden"
+      className="relative flex h-fit w-full justify-between max-w-[300px] mx-auto p-4 overflow-hidden"
     >
       <AnimatedBeam
         containerRef={containerRef}
