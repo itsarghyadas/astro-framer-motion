@@ -18,11 +18,11 @@ export default function AnimatedBeamDemo() {
       />
       <div
         ref={div1Ref}
-        className="z-10 h-10 w-10 rounded-full bg-white shadow-xl"
+        className="z-10 h-10 w-10 rounded-full bg-black dark:bg-white shadow-xl"
       />
       <div
         ref={div2Ref}
-        className="z-10 h-10 w-10 rounded-full bg-white shadow-xl"
+        className="z-10 h-10 w-10 rounded-full bg-black dark:bg-white shadow-xl"
       />
     </div>
   );
