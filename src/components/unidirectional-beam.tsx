@@ -7,7 +7,10 @@ export default function AnimatedBeamDemo() {
   const div2Ref = useRef<HTMLDivElement>(null);
 
   return (
-    <div ref={containerRef} className="relative flex h-72 w-72 justify-between">
+    <div
+      ref={containerRef}
+      className="relative flex h-full w-full justify-between max-w-[300px] mx-auto p-4 overflow-hidden"
+    >
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={div1Ref}
