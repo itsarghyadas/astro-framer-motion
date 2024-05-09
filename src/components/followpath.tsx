@@ -34,21 +34,6 @@ export default function FollowPath() {
     return () => controls.stop();
   }, [pathProgress]);
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 800) {
-        setDimensions({ width: window.innerWidth, height: 300 });
-      } else {
-        setDimensions({ width: 800, height: 300 });
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    handleResize();
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
     <div className="relative">
       <svg

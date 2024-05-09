@@ -12,7 +12,7 @@ export default function NumberTicker({
   value: number;
   direction?: "up" | "down";
   className?: string;
-  delay?: number; // delay in s
+  delay?: number;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const motionValue = useMotionValue(direction === "down" ? value : 0);

@@ -1,5 +1,5 @@
 import { AnimatedBeam } from "./magicui/animated-beam";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import React, { forwardRef } from "react";
 import { cn } from "../../lib/utils";
 import { Icons } from "./icons";
@@ -22,6 +22,7 @@ const Circle = forwardRef<
 });
 
 export function AnimatedBeamDemo() {
+  const [svgPath, setSvgPath] = useState("");
   const containerRef = useRef<HTMLDivElement>(null);
   const div1Ref = useRef<HTMLDivElement>(null);
   const div2Ref = useRef<HTMLDivElement>(null);
@@ -35,7 +36,7 @@ export function AnimatedBeamDemo() {
 
   return (
     <div
-      className="relative flex w-full max-w-[500px] items-center justify-center overflow-hidden rounded-lg border border-dashed border-neutral-500/20 bg-background p-10 shadow"
+      className="relative flex flex-col gap-y-5 w-full max-w-[500px] items-center justify-center overflow-hidden rounded-lg border border-dashed border-neutral-500/20 bg-background p-10 shadow"
       ref={containerRef}
     >
       <div className="flex h-full w-full flex-col items-stretch justify-between gap-10">
@@ -80,6 +81,7 @@ export function AnimatedBeamDemo() {
         toRef={div4Ref}
         dashPattern="10 10"
         bothSides
+        followPath={true}
       />
       <AnimatedBeam
         containerRef={containerRef}
