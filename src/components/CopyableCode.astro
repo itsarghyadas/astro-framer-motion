@@ -1,0 +1,47 @@
+---
+interface Props {
+  code: string;
+  language?: string;
+}
+
+const { code, language = "plaintext" } = Astro.props;
+---
+
+<div class="code-block-wrapper flex items-center justify-between px-4">
+  <pre><code class={language}>{code}</code></pre>
+  <button
+    class="copy-button text-xs border border-white/10 px-2 py-1 rounded-md"
+    >Copy</button
+  >
+</div>
+
+<script>
+  document.querySelectorAll(".copy-button").forEach((button) => {
+    button.addEventListener("click", function (this: HTMLButtonElement) {
+      const code = this.previousElementSibling?.textContent || "";
+      navigator.clipboard.writeText(code).then(() => {
+        this.textContent = "Copied!";
+        setTimeout(() => {
+          this.textContent = "Copy";
+        }, 2000);
+      });
+    });
+  });
+</script>
+
+<style>
+  .code-block-wrapper {
+    position: relative;
+    background-color: #363b361a;
+    color: #12f70b;
+    border-radius: 4px;
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  pre {
+    padding: 1em;
+    border-radius: 4px;
+    overflow-x: auto;
+  }
+</style>

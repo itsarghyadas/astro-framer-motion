@@ -15,15 +15,16 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link rel="stylesheet" href="/src/global.css" />
   </head>
 
-  <body class="font-gabarito bg-neutral-100 dark:bg-neutral-900">
+  <body
+    class="bg-neutral-100 dark:bg-neutral-900"
+    style="font-family: InterVariable, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv011', 'salt';"
+  >
     <slot />
   </body>
 </html>
